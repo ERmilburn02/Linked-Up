@@ -18,6 +18,10 @@ public class PlayerMovement : MonoBehaviour
     {
         inputV.x = Input.GetAxisRaw("Horizontal");
         inputV.y = Input.GetAxisRaw("Vertical");
+        if (transform.position.y < 0f)
+        {
+            UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex);
+        }
     }
 
     void FixedUpdate()

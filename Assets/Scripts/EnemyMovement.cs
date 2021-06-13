@@ -27,6 +27,11 @@ public class EnemyMovement : MonoBehaviour
             inputV.x = -(Input.GetAxisRaw("Horizontal"));
         }
         inputV.y = Input.GetAxisRaw("Vertical");
+
+        if (transform.position.y < 0f)
+        {
+            Destroy(gameObject);
+        }
     }
 
     void FixedUpdate()
